@@ -6,9 +6,11 @@ import Table from './Table';
 import Chart from './Chart';
 import calculate from './calculations';
 
+import DarkMode from './components/DarkMode/DarkMode';
+
 const defaultOverpayment = { month: '1', year: '0', amount: '0' };
 
-export default () => {
+export default (props) => {
   const [initial, setInitial] = useState('200000');
   const [rate, setRate] = useState('5');
   const [years, setYears] = useState('25');
@@ -33,11 +35,10 @@ export default () => {
   });
 
   return (
-    <div>
+    <div className={`${props.theme}`}>
       <nav className="navbar navbar-default">
-        <div className="navbar-header">
           <div className="navbar-brand">Mortgage Overpayment Calculator</div>
-        </div>
+          <DarkMode/>
       </nav>
       <div className="container-fluid">
         <div className="col-md-8 col-sm-12">
@@ -48,7 +49,8 @@ export default () => {
               <input
                 maxLength={7}
                 value={initial}
-                onChange={e => setInitial(e.target.value)}
+                onChange={e => setInitial(e.target.value)
+                }
               />
             </div>
             <div>

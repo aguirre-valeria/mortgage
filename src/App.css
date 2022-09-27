@@ -1,10 +1,14 @@
-.navbar {
+.navbar-default {
   background-color: #428bca;
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
 }
 
 .navbar .navbar-brand {
   color: #ffffff;
+  margin-right: auto;
 }
 
 input,
@@ -12,6 +16,10 @@ select,
 label {
   width: 70px;
   margin-right: 5px;
+}
+
+input, button {
+  color: #000000;
 }
 
 th,
